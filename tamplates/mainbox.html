@@ -2,90 +2,222 @@
 
 {% block content %}
 
-<!-- Hero Section -->
-<section class="hero" id="home" data-aos="fade-up" data-aos-duration="1000">
-    <div class="hero-content">
-        <div class="hero-text" data-aos="fade-right" data-aos-delay="200">
-            <div class="subtitle">INNOVATION MEETS EXCELLENCE</div>
-            <h1>Transform Your Digital Future</h1>
-            <p>We craft cutting-edge software solutions that empower businesses to thrive in the digital age.</p>
-            <div class="cta-buttons">
-                <a href="#services" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="300">Explore Services <span>→</span></a>
-                <a href="#contact" class="btn btn-secondary" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
-            </div>
-        </div>
-        <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
-            <div class="visual-container">
-                <div class="tech-stack">
-                    <div class="tech-icon tech1">⚛️</div>
-                    <div class="tech-icon tech2">🚀</div>
-                    <div class="tech-icon tech3">💎</div>
-                    <div class="tech-icon tech4">⚡</div>
-                </div>
-                <div class="floating-card card1" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-icon">📱</div>
-                    <div class="card-title">Mobile First</div>
-                    <div class="card-desc">Responsive design across all devices</div>
-                </div>
-                <div class="floating-card card2" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card-icon">🎨</div>
-                    <div class="card-title">Creative Design</div>
-                    <div class="card-desc">Beautiful interfaces that users love</div>
-                </div>
-                <div class="floating-card card3" data-aos="fade-up" data-aos-delay="600">
-                    <div class="card-icon">🔒</div>
-                    <div class="card-title">Secure</div>
-                    <div class="card-desc">Enterprise-grade security</div>
-                </div>
-            </div>
-        </div>
+<div id="theme-toggle" title="Click for Dark Mode | Double click for Light Mode">🌙</div>
+
+<section class="hero-section" id="home">
+    <div class="hero-header">
+        <h1 class="hero-title">
+            <span style="color: #93c5fd;">AI</span> Accelerate Growth with AI & IoT Innovation
+        </h1>
+        <p class="hero-subtitle">
+            Future-Proof Your Enterprise. Leverage cutting-edge AI and NFC to streamline operations, enhance
+            customer engagement, and achieve sustainable growth.
+        </p>
+        <p class="date-time">Today: Wednesday, October 15, 2025, 05:33 PM IST</p>
+    </div>
+    <div class="hero-buttons">
+        <button class="hero-button free-consultation">Get a Free Consultation</button>
+        <button class="hero-button see-solutions">See Our Solutions</button>
     </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats-section" data-aos="zoom-in" data-aos-duration="1000">
-    <div class="stats-grid">
-        <div class="stat-item"><div class="stat-number">250+</div><div class="stat-label">Projects Delivered</div></div>
-        <div class="stat-item"><div class="stat-number">150+</div><div class="stat-label">Happy Clients</div></div>
-        <div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Success Rate</div></div>
-        <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support Available</div></div>
+<script type="module" src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"></script>
+
+<section class="about-container">
+
+    <!-- Left Section (Lottie Animation) -->
+    <div class="about-lottie">
+        <dotlottie-wc src="https://lottie.host/17a2b2aa-6635-47f4-b7f2-b796e9c5ceb9/xtJ1bKtxee.lottie"
+            style="width: 100%; height: 100%;" autoplay loop></dotlottie-wc>
     </div>
+
+    <!-- Right Section (Text + Typing Effect) -->
+
+
+    <div class="about-text-section">
+        <h1 class="about-title">Engineering Innovation</h1>
+        <h3 class="
+        about-secondtitle "> Empowering Businesses, Inspiring Developers </h3>
+        <p class="about-description" id="typing-text">
+            At GIX Technology, we are architects of digital transformation, dedicated to empowering
+            businesses with innovative and intelligent solutions. We specialize in marketing technology,
+            IT solutions, and sustainable equity exchange, leveraging cutting-edge technology to drive
+            growth, efficiency, and a competitive edge for our clients. Our team of experts is committed
+            to turning complex challenges into impactful results, ensuring your business is not just
+            keeping pace with the future, but defining it.
+        </p>
+    </div>
+
 </section>
 
-<!-- Services Section -->
-<section class="services" id="services">
-    <div class="section-header" data-aos="fade-down">
-        <div class="section-tag">WHAT WE DO</div>
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-desc">Comprehensive technology solutions designed to accelerate your business growth.</p>
-    </div>
+<section id="services" class="services-section">
     <div class="services-grid">
-        {% for service in services %}
-        <div class="service-card" data-aos="flip-up" data-aos-delay="{{ forloop.counter|add:'100' }}">
-            <span class="service-number">{{ forloop.counter|stringformat:"02" }}</span>
-            <div class="service-icon">{{ service.icon }}</div>
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
-            <a href="#" class="service-link">Learn More →</a>
+        <div class="service-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/5738/5738031.png" alt="Mobile App Development Icon"
+                class="service-icon">
+            <h3 class="service-title">Mobile App Development</h3>
+            <p class="service-description">Native and cross-platform mobile applications with cutting-edge UI/UX,
+                seamless performance, and advanced functionality for iOS and Android platforms.</p>
         </div>
-        {% endfor %}
+
+        <div class="service-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/003/377/380/non_2x/line-icon-for-web-develop-vector.jpg"
+                alt="Web Development Icon" class="service-icon">
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-description">Full-stack web applications with modern frameworks, responsive design,
+                progressive web apps, and enterprise-grade scalability and security.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/026/123/664/non_2x/seo-analytics-icon-in-flat-style-social-media-illustration-on-white-isolated-background-search-analysis-business-concept-vector.jpg"
+                alt="SEO & Analytics Icon" class="service-icon">
+            <h3 class="service-title">SEO & Analytics</h3>
+            <p class="service-description">Advanced SEO strategies, technical optimization, content marketing, and
+                comprehensive analytics to maximize your online visibility and growth.</p>
+        </div>
     </div>
 </section>
 
-<!-- About Section -->
-<section class="about-section" id="about" data-aos="fade-up" data-aos-duration="1000">
-    <div class="about-container">
-        <div class="about-visual" data-aos="zoom-in">
-            <a href="#contact">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop" alt="Team collaboration">
+<div class="cards-3d-container">
+    <div class="card-3d">
+        <div class="card-icon">🤖</div>
+        <div class="card-label">AI-Powered</div>
+        <div class="card-desc">Intelligent Automation</div>
+    </div>
+
+    <div class="card-3d">
+        <div class="card-icon">⚡</div>
+        <div class="card-label">Real-Time</div>
+        <div class="card-desc">Instant Analytics</div>
+    </div>
+
+    <div class="card-3d">
+        <div class="card-icon">🚀</div>
+        <div class="card-label">Scalable</div>
+        <div class="card-desc">Enterprise Ready</div>
+    </div>
+</div>
+
+<section id="products">
+    <div class="products-header">
+        <h2 class="section-title">Our Innovation Products</h2>
+        <p class="section-subtitle">Discover our suite of intelligent solutions designed to transform your business
+        </p>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card">
+            <div class="card-number">01</div>
+            <h3 class="card-title">TechDine - AI Restaurant Platform</h3>
+            <p class="card-description">
+                Revolutionize dining experiences with our AI-powered hospitality solution that eliminates friction
+                while delivering actionable business intelligence.
+            </p>
+            <ul class="card-features">
+                <li>Intelligent virtual assistant for seamless ordering</li>
+                <li>Real-time analytics and customer insights</li>
+                <li>Automated inventory management system</li>
+                <li>Predictive demand forecasting</li>
+            </ul>
+            <a href="#" class="cta-button">
+                Learn More
+                <span>→</span>
             </a>
         </div>
-        <div class="about-text" data-aos="fade-left">
-            <h2 class="section-title">Gix Technologies</h2>
-            <p class="section-desc">We are architects of the digital future — crafting bespoke technology solutions that solve complex challenges and drive real growth.</p>
+
+        <div class="product-card">
+            <div class="card-number">02</div>
+            <h3 class="card-title">NFC Business Ecosystem</h3>
+            <p class="card-description">
+                Redefine professional engagement with smart NFC solutions that amplify digital presence and
+                streamline reputation management.
+            </p>
+            <ul class="card-features">
+                <li>Single-tap digital profile sharing</li>
+                <li>Enhanced networking capabilities</li>
+                <li>Integrated contact management system</li>
+                <li>Real-time engagement tracking</li>
+            </ul>
+            <a href="#" class="cta-button">
+                Learn More
+                <span>→</span>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <div class="card-number">03</div>
+            <h3 class="card-title">Enterprise Management Suite</h3>
+            <p class="card-description">
+                Comprehensive business management platform with AI-powered analytics, real-time collaboration, and
+                integrated workflow automation.
+            </p>
+            <ul class="card-features">
+                <li>Advanced analytics dashboard</li>
+                <li>Collaborative team workspace</li>
+                <li>Intelligent workflow automation</li>
+                <li>Cloud-based scalability</li>
+            </ul>
+            <a href="#" class="cta-button">
+                Learn More
+                <span>→</span>
+            </a>
         </div>
     </div>
 </section>
+
+<section id="testimonials" class="testimonials-section">
+    <div class="testimonials-header">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Hear from businesses transformed by GiX Technologies</p>
+    </div>
+
+    <div class="testimonials-carousel">
+        <div class="testimonial-container">
+            <div class="testimonial-card active" data-index="0">
+                <p class="testimonial-text">
+                    Their custom software solution streamlined our operations and boosted efficiency. GiX
+                    Technologies truly understands business needs and delivers tailor-made excellence.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MK</div>
+                    <div class="author-info">
+                        <div class="author-name">Ms. Manmeet Kaur</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-index="1">
+                <p class="testimonial-text">
+                    The AI integration provided by GiX Technologies gave us a competitive edge. Their team is
+                    knowledgeable, responsive, and incredibly innovative.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">EL</div>
+                    <div class="author-info">
+                        <div class="author-name">Mr. Tarun Mishra</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-index="2">
+                <p class="testimonial-text">
+                    GiX Technologies' SEO and analytics services dramatically improved our search rankings and
+                    online visibility. We've seen a significant increase in organic traffic.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">G</div>
+                    <div class="author-info">
+                        <div class="author-name">Ms Geetanjali</div>
+                        <div class="author-title">Marketing Director, Digital Ventures</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-indicators" id="indicators"></div>
+    </div>
+</section>
+
 
 <!-- Contact Section -->
 <section class="contact-section" id="contact" data-aos="fade-up" data-aos-duration="1000">
@@ -109,11 +241,13 @@
     </div>
 </section>
 
+
+
 <!-- AOS Animation Library -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ once: true, duration: 1000 });
+    AOS.init({ once: true, duration: 1000 });
 </script>
 
 {% endblock %}
