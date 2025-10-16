@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero" id="home" data-aos="fade-up" data-aos-duration="1000">
+    <div class="hero-content">
+        <div class="hero-text" data-aos="fade-right" data-aos-delay="200">
+            <div class="subtitle">INNOVATION MEETS EXCELLENCE</div>
+            <h1>Transform Your Digital Future</h1>
+            <p>We craft cutting-edge software solutions that empower businesses to thrive in the digital age.</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="300">Explore Services <span>→</span></a>
+                <a href="#contact" class="btn btn-secondary" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
+            </div>
+        </div>
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+            <div class="visual-container">
+                <div class="tech-stack">
+                    <div class="tech-icon tech1">⚛️</div>
+                    <div class="tech-icon tech2">🚀</div>
+                    <div class="tech-icon tech3">💎</div>
+                    <div class="tech-icon tech4">⚡</div>
+                </div>
+                <div class="floating-card card1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">📱</div>
+                    <div class="card-title">Mobile First</div>
+                    <div class="card-desc">Responsive design across all devices</div>
+                </div>
+                <div class="floating-card card2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-title">Creative Design</div>
+                    <div class="card-desc">Beautiful interfaces that users love</div>
+                </div>
+                <div class="floating-card card3" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-icon">🔒</div>
+                    <div class="card-title">Secure</div>
+                    <div class="card-desc">Enterprise-grade security</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="stats-grid">
+        <div class="stat-item"><div class="stat-number">250+</div><div class="stat-label">Projects Delivered</div></div>
+        <div class="stat-item"><div class="stat-number">150+</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Success Rate</div></div>
+        <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support Available</div></div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="section-header" data-aos="fade-down">
+        <div class="section-tag">WHAT WE DO</div>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-desc">Comprehensive technology solutions designed to accelerate your business growth.</p>
+    </div>
+    <div class="services-grid">
+        {% for service in services %}
+        <div class="service-card" data-aos="flip-up" data-aos-delay="{{ forloop.counter|add:'100' }}">
+            <span class="service-number">{{ forloop.counter|stringformat:"02" }}</span>
+            <div class="service-icon">{{ service.icon }}</div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <a href="#" class="service-link">Learn More →</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section" id="about" data-aos="fade-up" data-aos-duration="1000">
+    <div class="about-container">
+        <div class="about-visual" data-aos="zoom-in">
+            <a href="#contact">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop" alt="Team collaboration">
+            </a>
+        </div>
+        <div class="about-text" data-aos="fade-left">
+            <h2 class="section-title">Gix Technologies</h2>
+            <p class="section-desc">We are architects of the digital future — crafting bespoke technology solutions that solve complex challenges and drive real growth.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact" data-aos="fade-up" data-aos-duration="1000">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Submit Your Contact & Feedback</h2>
+            <p>Fill the form below and we will get back to you promptly.</p>
+        </div>
+        <div class="contact-form" data-aos="zoom-in">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group">{{ form.name.label_tag }}{{ form.name }}</div>
+                    <div class="form-group">{{ form.mobile.label_tag }}{{ form.mobile }}</div>
+                </div>
+                <div class="form-group">{{ form.email.label_tag }}{{ form.email }}</div>
+                <div class="form-group">{{ form.feedback.label_tag }}{{ form.feedback }}</div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, duration: 1000 });
+</script>
+
+{% endblock %}
