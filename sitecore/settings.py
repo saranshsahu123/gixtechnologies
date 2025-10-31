@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#y3d1i*s7044*j5szpa!*jh6yhb#i4$ore%e$u4*j93dss+p1+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = [
+    '.onrender.com', # Important for Render subdomain
+    'your-custom-domain.com' # If you add one
+]
 
 
 # Application definition
@@ -43,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,10 +80,10 @@ WSGI_APPLICATION = 'sitecore.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3', # Use a local default
+        conn_max_age=600 # Optional, for connection pooling
+    )
 }
 
 
@@ -139,4 +144,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mailsahu321@gmail.com'          # your Gmail address
 EMAIL_HOST_PASSWORD = 'qmrr zorv xikc eicl'        # Gmail App Password, not your normal password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
